@@ -35,19 +35,19 @@ getUserMedia({ video: true, audio: true }, async function (err, stream) {
     //document.getElementById('yourId').innerText = JSON.stringify(data)
   })
 
-    document.getElementById('connect').addEventListener('click', function () {
-      var otherId = JSON.parse(document.getElementById('otherId').value)
-      peer.signal(otherId)
-    })
+  //   document.getElementById('connect').addEventListener('click', function () {
+  //     var otherId = JSON.parse(document.getElementById('otherId').value)
+  //     peer.signal(otherId)
+  //   })
 
-    document.getElementById('send').addEventListener('click', function () {
-      var yourMessage = document.getElementById('yourMessage').value
-      peer.send(yourMessage)
-    })
+  //   document.getElementById('send').addEventListener('click', function () {
+  //     var yourMessage = document.getElementById('yourMessage').value
+  //     peer.send(yourMessage)
+  //   })
 
-    peer.on('data', function (data) {
-      document.getElementById('messages').textContent += data + '\n'
-    })
+  //   peer.on('data', function (data) {
+  //     document.getElementById('messages').textContent += data + '\n'
+  //   })
 
   peer.on('stream', function (stream) {
     const mediaStream = new MediaStream(stream);
